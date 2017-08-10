@@ -39,6 +39,11 @@ COMPILER_CXX=c++
 COMPILER_LD=c++
 [[ "$CXXFLAGS" == *'-std=c++11'* ]] && CXX11=1 || true
 [[ "$CXXFLAGS" == *'-std=c++14'* ]] && CXX14=1 || true
+[[ "$CXXFLAGS" != *'-Wall'* ]] && CXXFLAGS="$CXXFLAGS -Wall"
+[[ "$CXXFLAGS" != *'-W'* ]] && CXXFLAGS="$CXXFLAGS -W"
+[[ "$CXXFLAGS" != *'-Woverloaded-virtual'* ]] && CXXFLAGS="$CXXFLAGS -Woverloaded-virtual"
+[[ "$CXXFLAGS" != *'-Wreorder'* ]] && CXXFLAGS="$CXXFLAGS -Wreorder"
+[[ "$CXXFLAGS" != *'-Wuninitialized'* ]] && CXXFLAGS="$CXXFLAGS -Wuninitialized"
 
 case $ARCHITECTURE in
   osx*)
